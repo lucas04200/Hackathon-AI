@@ -5,7 +5,7 @@ const points = [
     position: { x: -1.5, y: 0, z: 3 },
     content: `
           <div class="info-stage">Étape 1: Pêche et congélation</div>
-          <img src="https://picsum.photos/seed/senegal/300/200" alt="Pêche au Sénégal">
+          <img src="images/crevette-congele.webp" alt="Pêche au Sénégal">
           <div class="info-description">
               <p>La crevette commence son parcours à Dakar, au Sénégal, où elle est pêchée dans les eaux côtières par des chalutiers industriels.</p>
               <div class="info-stats">
@@ -36,7 +36,7 @@ const points = [
     position: { x: 0, y: 0, z: 5 },
     content: `
           <div class="info-stage">Étape 2: Transport maritime</div>
-          <img src="https://picsum.photos/seed/cargo/300/200" alt="Transport maritime">
+          <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
           <div class="info-description">
               <p>Transport par cargo frigorifique de Dakar vers Hô Chi Minh-Ville à travers l'océan Indien.</p>
               <div class="info-stats">
@@ -67,7 +67,7 @@ const points = [
     position: { x: 5, y: 0, z: 2 },
     content: `
             <div class="info-stage">Étape 3: Transformation</div>
-            <img src="https://picsum.photos/seed/vietnam/300/200" alt="Usine au Vietnam">
+            <img src="images/transformation.webp" alt="Usine au Vietnam">
             <div class="info-description">
                 <p>Les crevettes sont transformées dans des usines vietnamiennes spécialisées dans le traitement des produits de la mer.</p>
                 <div class="info-stats">
@@ -98,7 +98,7 @@ const points = [
     position: { x: 2, y: 0, z: -5 },
     content: `
             <div class="info-stage">Étape 4: Retour vers l'Europe</div>
-            <img src="https://picsum.photos/seed/shipping/300/200" alt="Transport vers l'Europe">
+            <img src="images/transport-vietnam-france.webp" alt="Transport vers l'Europe">
             <div class="info-description">
                 <p>Second trajet maritime pour acheminer les crevettes transformées vers l'Europe.</p>
                 <div class="info-stats">
@@ -129,7 +129,7 @@ const points = [
     position: { x: 0, y: 1, z: -4 },
     content: `
             <div class="info-stage">Étape 5: Distribution finale</div>
-            <img src="https://picsum.photos/seed/france/300/200" alt="Distribution en France">
+            <img src="images/plateforme-distribution.webp" alt="Distribution en France">
             <div class="info-description">
                 <p>Arrivée en France et distribution vers les points de vente.</p>
                 <div class="info-stats">
