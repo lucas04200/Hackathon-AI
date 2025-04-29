@@ -22,7 +22,7 @@ function init() {
 
   // Créer la caméra
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 5, 15);
+  camera.position.set(200, 200, 200);
   camera.lookAt(0, 0, 0);
   
   // Créer le renderer
@@ -68,9 +68,9 @@ function init() {
     // Place au premier point si possible
     if (points.length > 0) {
       const start = new THREE.Vector3(
-        points[0].position.x,
+        (points[0].position.x,
         points[0].position.y,
-        points[0].position.z
+        points[0].position.z)
       ).normalize().multiplyScalar(5.1);
       shrimpModel.position.copy(start);
     }
@@ -249,27 +249,7 @@ function createPointMarkers() {
       console.log("Journey path created");
     }
     
-    // Mise à jour des positions des marqueurs HTML
-    // function updateMarkerPositions() {
-    //   pointMarkers.forEach((marker, index) => {
-    //     const position = marker.threeDMarker.position.clone();
-    //     const vector = position.project(camera);
-        
-    //     // Convertir les coordonnées normalisées en coordonnées d'écran
-    //     const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
-    //     const y = (-vector.y * 0.5 + 0.5) * window.innerHeight;
-        
-    //     // Vérifier si le point est visible (face à la caméra)
-    //     if (vector.z < 1) {
-    //       marker.htmlMarker.style.display = 'block';
-    //       marker.htmlMarker.style.left = `${x}px`;
-    //       marker.htmlMarker.style.top = `${y}px`;
-    //     } else {
-    //       marker.htmlMarker.style.display = 'none';
-    //     }
-    //   });
-    // }
-    
+
     // Initialisation des contrôles
     function initControls() {
       document.getElementById('prev-btn').addEventListener('click', () => {
