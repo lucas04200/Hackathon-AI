@@ -4,220 +4,130 @@ const points = [
     title: "Pêche à Dakar (Sénégal)",
     position: { x: 6.5, y: 2, z: 2.0 },
     content: `
-          <div class="info-stage">Étape 1: Pêche et congélation</div>
-          <img src="images/crevette-congele.webp" alt="Pêche au Sénégal">
-          <div class="info-description">
-              <p>La crevette commence son parcours à Dakar, au Sénégal, où elle est pêchée dans les eaux côtières par des chalutiers industriels.</p>
-              <div class="info-stats">
-                  <div class="stat">
-                      <i class="stat-icon">📍</i>
-                      <span>Distance: 0 km (origine)</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">⏱️</i>
-                      <span>Temps: 1-3 jours</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">🌡️</i>
-                      <span>Température: -18°C (congélation)</span>
-                  </div>
-              </div>
-              <p>Après la pêche, les crevettes sont triées, nettoyées et immédiatement congelées à bord avant d'être transférées dans des containers réfrigérés.</p>
+        <div class="info-stage">Étape 1: Départ de Dakar</div>
+        <img src="images/crevette-congele.webp" alt="Pêche au Sénégal">
+        <div class="info-description">
+          <p>Les crevettes sont pêchées au large de Dakar, immédiatement triées, nettoyées, congelées et stockées en containers frigorifiques sur les navires.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">📍</i> Distance: 0 km (origine)</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: 1-3 jours</div>
+            <div class="stat"><i class="stat-icon">🌡️</i> Température: -18°C</div>
           </div>
+        </div>
       `,
-    impact: {
-      carbon: 10,
-      water: 5,
-      energy: 15
-    }
+    impact: { carbon: 10, water: 5, energy: 15 }
   },
   {
-    title: "Passage Sud Atlantique",
-    position: { x: 10, y:-8.5, z: -4 },    
+    title: "Passage au Sud de l'Afrique",
+    position: { x: 10, y: -8.5, z: -4 },
     content: `
-          <div class="info-stage">Étape 2: Transport maritime</div>
-          <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
-          <div class="info-description">
-              <p>Transport par cargo frigorifique de Dakar vers Hô Chi Minh-Ville à travers l'océan Indien.</p>
-              <div class="info-stats">
-                  <div class="stat">
-                      <i class="stat-icon">🚢</i>
-                      <span>Distance: ~13 000 km (via canal de Suez)</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">⏱️</i>
-                      <span>Temps: 30-35 jours</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">🌡️</i>
-                      <span>Température: -18°C (maintenue)</span>
-                  </div>
-              </div>
-              <p>Les crevettes voyagent dans des containers réfrigérés, consommant de l'énergie en continu pour maintenir la chaîne du froid. Le navire fait plusieurs escales et traverse le canal de Suez.</p>
+        <div class="info-stage">Étape 2: Passage Sud Atlantique</div>
+        <img src="images/passage-cape.webp" alt="Passage Sud Afrique">
+        <div class="info-description">
+          <p>Le cargo longe la côte ouest africaine jusqu'au Cap de Bonne-Espérance, contournant l'Afrique pour rejoindre l'océan Indien.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🚢</i> Distance: ~6 000 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: ~15 jours</div>
           </div>
+        </div>
       `,
-    impact: {
-      carbon: 40,
-      water: 10,
-      energy: 45
-    }
+    impact: { carbon: 20, water: 5, energy: 20 }
   },
   {
-    title: "Transport maritime vers le Vietnam",
-    position: { x: 10, y:-8.5, z: -4 },
+    title: "Traversée de l'Océan Indien",
+    position: { x: 2, y: 0, z: -5 },
     content: `
-          <div class="info-stage">Étape 2: Transport maritime</div>
-          <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
-          <div class="info-description">
-              <p>Transport par cargo frigorifique de Dakar vers Hô Chi Minh-Ville à travers l'océan Indien.</p>
-              <div class="info-stats">
-                  <div class="stat">
-                      <i class="stat-icon">🚢</i>
-                      <span>Distance: ~13 000 km (via canal de Suez)</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">⏱️</i>
-                      <span>Temps: 30-35 jours</span>
-                  </div>
-                  <div class="stat">
-                      <i class="stat-icon">🌡️</i>
-                      <span>Température: -18°C (maintenue)</span>
-                  </div>
-              </div>
-              <p>Les crevettes voyagent dans des containers réfrigérés, consommant de l'énergie en continu pour maintenir la chaîne du froid. Le navire fait plusieurs escales et traverse le canal de Suez.</p>
+        <div class="info-stage">Étape 3: Traversée de l'Océan Indien</div>
+        <img src="images/ocean-indien.webp" alt="Traversée Océan Indien">
+        <div class="info-description">
+          <p>Le cargo traverse l'océan Indien en direction de l'Asie du Sud-Est, en maintenant la chaîne du froid.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🚢</i> Distance: ~4 000 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: ~10 jours</div>
           </div>
+        </div>
       `,
-    impact: {
-      carbon: 40,
-      water: 10,
-      energy: 45
-    }
+    impact: { carbon: 25, water: 5, energy: 25 }
   },
   {
     title: "Transformation au Vietnam",
-    position: { x: 2, y: 0, z: -5 },
-    content: `
-    <div class="info-stage">Étape 3: Transformation</div>
-    <img src="images/transformation.webp" alt="Usine au Vietnam">
-    <div class="info-description">
-    <p>Les crevettes sont transformées dans des usines vietnamiennes spécialisées dans le traitement des produits de la mer.</p>
-    <div class="info-stats">
-    <div class="stat">
-    <i class="stat-icon">🏭</i>
-    <span>Distance: ~50 km en transport local</span>
-    </div>
-    <div class="stat">
-    <i class="stat-icon">⏱️</i>
-    <span>Temps: 3-7 jours</span>
-    </div>
-    <div class="stat">
-    <i class="stat-icon">👥</i>
-    <span>Main d'œuvre: Décorticage manuel</span>
-    </div>
-    </div>
-    <p>Les crevettes sont décongelées, décortiquées à la main, nettoyées, puis recongelées et emballées pour l'exportation. Cette étape nécessite beaucoup de main d'œuvre, ce qui explique la délocalisation vers des pays à faibles coûts salariaux.</p>
-    </div>
-    `,
-    impact: {
-      carbon: 25,
-      water: 60,
-      energy: 30
-    }
-  },
-  {
-    title: "Transport maritime vers la France",
     position: { x: -1.25, y: 1, z: -5 },
     content: `
-    <div class="info-stage">Étape 4: Retour vers l'Europe</div>
-    <img src="images/transport-vietnam-france.webp" alt="Transport vers l'Europe">
-    <div class="info-description">
-    <p>Second trajet maritime pour acheminer les crevettes transformées vers l'Europe.</p>
-    <div class="info-stats">
-    <div class="stat">
-    <i class="stat-icon">🚢</i>
-    <span>Distance: ~11 000 km</span>
-    </div>
-    <div class="stat">
-    <i class="stat-icon">⏱️</i>
-    <span>Temps: 25-30 jours</span>
-    </div>
-    <div class="stat">
-    <i class="stat-icon">📦</i>
-    <span>Conditionnement: Containers réfrigérés</span>
-    </div>
-    </div>
-    <p>Les crevettes transformées et reconditionnées sont chargées sur un autre cargo frigorifique pour le long voyage retour vers l'Europe, via l'océan Indien et la mer Méditerranée.</p>
-            </div>
-        `,
-    impact: {
-      carbon: 35,
-      water: 10,
-      energy: 40
-    }
+        <div class="info-stage">Étape 4: Transformation au Vietnam</div>
+        <img src="images/transformation.webp" alt="Usine au Vietnam">
+        <div class="info-description">
+          <p>Les crevettes sont transformées à Hô Chi Minh-Ville : décorticage manuel, nettoyage, reconditionnement et recongélation.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🏭</i> Transport local: ~50 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: 3-7 jours</div>
+          </div>
+        </div>
+      `,
+    impact: { carbon: 25, water: 60, energy: 30 }
   },
   {
-    title: "Distribution en France",
+    title: "Retour Océan Indien",
     position: { x: 2, y: 0.5, z: -5 },
     content: `
-            <div class="info-stage">Étape 5: Distribution finale</div>
-            <img src="images/plateforme-distribution.webp" alt="Distribution en France">
-            <div class="info-description">
-                <p>Arrivée en France et distribution vers les points de vente.</p>
-                <div class="info-stats">
-                    <div class="stat">
-                        <i class="stat-icon">🚚</i>
-                        <span>Distance: 700-900 km en camion</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">⏱️</i>
-                        <span>Temps: 1-2 jours</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">💰</i>
-                        <span>Prix final: ~3-4x le prix d'origine</span>
-                    </div>
-                </div>
-                <p>Les crevettes arrivent au port du Havre ou de Marseille, puis sont transportées par camion frigorifique vers les plateformes logistiques comme Rungis, avant d'être distribuées aux supermarchés et restaurants.</p>
-                <p><strong>Bilan total:</strong> Distance cumulée d'environ 25 000 à 27 000 km sur 60 à 75 jours (2 à 2,5 mois)</p>
-            </div>
-        `,
-    impact: {
-      carbon: 20,
-      water: 5,
-      energy: 15
-    }
+        <div class="info-stage">Étape 5: Retour par l'Océan Indien</div>
+        <img src="images/retour-ocean.webp" alt="Retour Océan Indien">
+        <div class="info-description">
+          <p>Les crevettes transformées repartent en traversant à nouveau l'océan Indien en direction de la Mer Rouge.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🚢</i> Distance: ~4 000 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: ~10 jours</div>
+          </div>
+        </div>
+      `,
+    impact: { carbon: 20, water: 5, energy: 20 }
   },
   {
-    title: "Distribution en France",
-    position: { x: 2, y: 1.25, z: -5 },
+    title: "Passage Bab el-Mandeb",
+    position: { x: 4.9, y: 1.5, z: -5 },
     content: `
-            <div class="info-stage">Étape 5: Distribution finale</div>
-            <img src="images/plateforme-distribution.webp" alt="Distribution en France">
-            <div class="info-description">
-                <p>Arrivée en France et distribution vers les points de vente.</p>
-                <div class="info-stats">
-                    <div class="stat">
-                        <i class="stat-icon">🚚</i>
-                        <span>Distance: 700-900 km en camion</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">⏱️</i>
-                        <span>Temps: 1-2 jours</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">💰</i>
-                        <span>Prix final: ~3-4x le prix d'origine</span>
-                    </div>
-                </div>
-                <p>Les crevettes arrivent au port du Havre ou de Marseille, puis sont transportées par camion frigorifique vers les plateformes logistiques comme Rungis, avant d'être distribuées aux supermarchés et restaurants.</p>
-                <p><strong>Bilan total:</strong> Distance cumulée d'environ 25 000 à 27 000 km sur 60 à 75 jours (2 à 2,5 mois)</p>
-            </div>
-        `,
-    impact: {
-      carbon: 20,
-      water: 5,
-      energy: 15
-    }
+        <div class="info-stage">Étape 6: Passage Bab el-Mandeb</div>
+        <img src="images/bab-el-mandeb.webp" alt="Détroit de Bab el-Mandeb">
+        <div class="info-description">
+          <p>Le cargo passe par le détroit de Bab el-Mandeb pour entrer en Mer Rouge, reliant l'océan Indien à la Méditerranée.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🛳️</i> Passage étroit</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: quelques heures</div>
+          </div>
+        </div>
+      `,
+    impact: { carbon: 5, water: 2, energy: 5 }
+  },
+  {
+    title: "Traversée de la Méditerranée",
+    position: { x: 7, y: 5.5, z: -3.9 },
+    content: `
+        <div class="info-stage">Étape 7: Traversée Méditerranée</div>
+        <img src="images/mer-mediterranee.webp" alt="Traversée Méditerranée">
+        <div class="info-description">
+          <p>Après le canal de Suez, le cargo traverse toute la mer Méditerranée jusqu'à Marseille.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🚢</i> Distance: ~3 000 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: ~7-10 jours</div>
+          </div>
+        </div>
+      `,
+    impact: { carbon: 15, water: 5, energy: 15 }
+  },
+  {
+    title: "Arrivée en France (Marseille)",
+    position: { x: 10, y: 9, z: -1 },
+    content: `
+        <div class="info-stage">Étape 8: Distribution en France</div>
+        <img src="images/distribution-france.webp" alt="Distribution en France">
+        <div class="info-description">
+          <p>Arrivée à Marseille. Les crevettes sont déchargées puis transportées par camion réfrigéré vers les entrepôts logistiques et points de vente.</p>
+          <div class="info-stats">
+            <div class="stat"><i class="stat-icon">🚚</i> Distance terrestre: 700-900 km</div>
+            <div class="stat"><i class="stat-icon">⏱️</i> Temps: 1-2 jours</div>
+          </div>
+        </div>
+      `,
+    impact: { carbon: 20, water: 5, energy: 15 }
   }
 ];
 
@@ -225,19 +135,19 @@ const points = [
 function createPlanet() {
   // Create geometry
   const geometry = new THREE.SphereGeometry(5, 64, 64);
-  
+
   // Load real Earth textures
   const textureLoader = new THREE.TextureLoader();
-  
+
   // Earth texture map
   const texture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg');
-  
+
   // Earth bump map for terrain
   const bumpMap = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg');
-  
+
   // Earth specular map for oceans
   const specularMap = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_specular_2048.jpg');
-  
+
   const material = new THREE.MeshPhongMaterial({
     map: texture,
     bumpMap: bumpMap,
@@ -246,11 +156,11 @@ function createPlanet() {
     specular: new THREE.Color('grey'),
     shininess: 10
   });
-  
+
   // Create the mesh
   planet = new THREE.Mesh(geometry, material);
   scene.add(planet);
-  
+
   // Add a subtle cloud layer
   const cloudGeometry = new THREE.SphereGeometry(5.1, 64, 64);
   const cloudTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png');
@@ -259,18 +169,18 @@ function createPlanet() {
     transparent: true,
     opacity: 0.3
   });
-  
+
   const clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
   scene.add(clouds);
-  
+
   // Animate clouds separately
   function animateClouds() {
     clouds.rotation.y += 0.0005;
     requestAnimationFrame(animateClouds);
   }
-  
+
   animateClouds();
-  
+
   // Add atmosphere glow
   const atmosphereGeometry = new THREE.SphereGeometry(5.2, 64, 64);
   const atmosphereMaterial = new THREE.MeshPhongMaterial({
@@ -289,7 +199,7 @@ function createStars() {
     color: 0xffffff,
     size: 0.1
   });
-  
+
   const starVertices = [];
   for (let i = 0; i < 10000; i++) {
     const x = (Math.random() - 0.5) * 2000;
@@ -297,7 +207,7 @@ function createStars() {
     const z = (Math.random() - 0.5) * 2000;
     starVertices.push(x, y, z);
   }
-  
+
   starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
   const stars = new THREE.Points(starGeometry, starMaterial);
   scene.add(stars);
