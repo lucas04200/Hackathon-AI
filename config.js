@@ -2,7 +2,7 @@
 const points = [
   {
     title: "Pêche à Dakar (Sénégal)",
-    position: { x: -1.5, y: 0, z: 3 },
+    position: { x: 6.5, y: 2, z: 2.0 },
     content: `
           <div class="info-stage">Étape 1: Pêche et congélation</div>
           <img src="images/crevette-congele.webp" alt="Pêche au Sénégal">
@@ -29,6 +29,37 @@ const points = [
       carbon: 10,
       water: 5,
       energy: 15
+    }
+  },
+  {
+    title: "Transport maritime vers le Vietnam",
+    position: { x: 2 , y: -3, z: 2.0 },
+    content: `
+          <div class="info-stage">Étape 2: Transport maritime</div>
+          <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
+          <div class="info-description">
+              <p>Transport par cargo frigorifique de Dakar vers Hô Chi Minh-Ville à travers l'océan Indien.</p>
+              <div class="info-stats">
+                  <div class="stat">
+                      <i class="stat-icon">🚢</i>
+                      <span>Distance: ~13 000 km (via canal de Suez)</span>
+                  </div>
+                  <div class="stat">
+                      <i class="stat-icon">⏱️</i>
+                      <span>Temps: 30-35 jours</span>
+                  </div>
+                  <div class="stat">
+                      <i class="stat-icon">🌡️</i>
+                      <span>Température: -18°C (maintenue)</span>
+                  </div>
+              </div>
+              <p>Les crevettes voyagent dans des containers réfrigérés, consommant de l'énergie en continu pour maintenir la chaîne du froid. Le navire fait plusieurs escales et traverse le canal de Suez.</p>
+          </div>
+      `,
+    impact: {
+      carbon: 40,
+      water: 10,
+      energy: 45
     }
   },
   {
