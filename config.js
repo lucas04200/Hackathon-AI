@@ -32,8 +32,8 @@ const points = [
     }
   },
   {
-    title: "Transport maritime vers le Vietnam",
-    position: { x: 2 , y: -3, z: 2.0 },
+    title: "Passage Sud Atlantique",
+    position: { x: 10, y:-8.5, z: -4 },    
     content: `
           <div class="info-stage">Étape 2: Transport maritime</div>
           <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
@@ -64,7 +64,7 @@ const points = [
   },
   {
     title: "Transport maritime vers le Vietnam",
-    position: { x: 0, y: 0, z: 5 },
+    position: { x: 10, y:-8.5, z: -4 },
     content: `
           <div class="info-stage">Étape 2: Transport maritime</div>
           <img src="images/transport-conteneur-dakar-vietnam.webp" alt="Transport maritime">
@@ -95,29 +95,29 @@ const points = [
   },
   {
     title: "Transformation au Vietnam",
-    position: { x: 5, y: 0, z: 2 },
+    position: { x: 2, y: 0, z: -5 },
     content: `
-            <div class="info-stage">Étape 3: Transformation</div>
-            <img src="images/transformation.webp" alt="Usine au Vietnam">
-            <div class="info-description">
-                <p>Les crevettes sont transformées dans des usines vietnamiennes spécialisées dans le traitement des produits de la mer.</p>
-                <div class="info-stats">
-                    <div class="stat">
-                        <i class="stat-icon">🏭</i>
-                        <span>Distance: ~50 km en transport local</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">⏱️</i>
-                        <span>Temps: 3-7 jours</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">👥</i>
-                        <span>Main d'œuvre: Décorticage manuel</span>
-                    </div>
-                </div>
-                <p>Les crevettes sont décongelées, décortiquées à la main, nettoyées, puis recongelées et emballées pour l'exportation. Cette étape nécessite beaucoup de main d'œuvre, ce qui explique la délocalisation vers des pays à faibles coûts salariaux.</p>
-            </div>
-        `,
+    <div class="info-stage">Étape 3: Transformation</div>
+    <img src="images/transformation.webp" alt="Usine au Vietnam">
+    <div class="info-description">
+    <p>Les crevettes sont transformées dans des usines vietnamiennes spécialisées dans le traitement des produits de la mer.</p>
+    <div class="info-stats">
+    <div class="stat">
+    <i class="stat-icon">🏭</i>
+    <span>Distance: ~50 km en transport local</span>
+    </div>
+    <div class="stat">
+    <i class="stat-icon">⏱️</i>
+    <span>Temps: 3-7 jours</span>
+    </div>
+    <div class="stat">
+    <i class="stat-icon">👥</i>
+    <span>Main d'œuvre: Décorticage manuel</span>
+    </div>
+    </div>
+    <p>Les crevettes sont décongelées, décortiquées à la main, nettoyées, puis recongelées et emballées pour l'exportation. Cette étape nécessite beaucoup de main d'œuvre, ce qui explique la délocalisation vers des pays à faibles coûts salariaux.</p>
+    </div>
+    `,
     impact: {
       carbon: 25,
       water: 60,
@@ -126,27 +126,27 @@ const points = [
   },
   {
     title: "Transport maritime vers la France",
-    position: { x: 2, y: 0, z: -5 },
+    position: { x: -1.25, y: 1, z: -5 },
     content: `
-            <div class="info-stage">Étape 4: Retour vers l'Europe</div>
-            <img src="images/transport-vietnam-france.webp" alt="Transport vers l'Europe">
-            <div class="info-description">
-                <p>Second trajet maritime pour acheminer les crevettes transformées vers l'Europe.</p>
-                <div class="info-stats">
-                    <div class="stat">
-                        <i class="stat-icon">🚢</i>
-                        <span>Distance: ~11 000 km</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">⏱️</i>
-                        <span>Temps: 25-30 jours</span>
-                    </div>
-                    <div class="stat">
-                        <i class="stat-icon">📦</i>
-                        <span>Conditionnement: Containers réfrigérés</span>
-                    </div>
-                </div>
-                <p>Les crevettes transformées et reconditionnées sont chargées sur un autre cargo frigorifique pour le long voyage retour vers l'Europe, via l'océan Indien et la mer Méditerranée.</p>
+    <div class="info-stage">Étape 4: Retour vers l'Europe</div>
+    <img src="images/transport-vietnam-france.webp" alt="Transport vers l'Europe">
+    <div class="info-description">
+    <p>Second trajet maritime pour acheminer les crevettes transformées vers l'Europe.</p>
+    <div class="info-stats">
+    <div class="stat">
+    <i class="stat-icon">🚢</i>
+    <span>Distance: ~11 000 km</span>
+    </div>
+    <div class="stat">
+    <i class="stat-icon">⏱️</i>
+    <span>Temps: 25-30 jours</span>
+    </div>
+    <div class="stat">
+    <i class="stat-icon">📦</i>
+    <span>Conditionnement: Containers réfrigérés</span>
+    </div>
+    </div>
+    <p>Les crevettes transformées et reconditionnées sont chargées sur un autre cargo frigorifique pour le long voyage retour vers l'Europe, via l'océan Indien et la mer Méditerranée.</p>
             </div>
         `,
     impact: {
@@ -157,7 +157,39 @@ const points = [
   },
   {
     title: "Distribution en France",
-    position: { x: 0, y: 1, z: -4 },
+    position: { x: 2, y: 0.5, z: -5 },
+    content: `
+            <div class="info-stage">Étape 5: Distribution finale</div>
+            <img src="images/plateforme-distribution.webp" alt="Distribution en France">
+            <div class="info-description">
+                <p>Arrivée en France et distribution vers les points de vente.</p>
+                <div class="info-stats">
+                    <div class="stat">
+                        <i class="stat-icon">🚚</i>
+                        <span>Distance: 700-900 km en camion</span>
+                    </div>
+                    <div class="stat">
+                        <i class="stat-icon">⏱️</i>
+                        <span>Temps: 1-2 jours</span>
+                    </div>
+                    <div class="stat">
+                        <i class="stat-icon">💰</i>
+                        <span>Prix final: ~3-4x le prix d'origine</span>
+                    </div>
+                </div>
+                <p>Les crevettes arrivent au port du Havre ou de Marseille, puis sont transportées par camion frigorifique vers les plateformes logistiques comme Rungis, avant d'être distribuées aux supermarchés et restaurants.</p>
+                <p><strong>Bilan total:</strong> Distance cumulée d'environ 25 000 à 27 000 km sur 60 à 75 jours (2 à 2,5 mois)</p>
+            </div>
+        `,
+    impact: {
+      carbon: 20,
+      water: 5,
+      energy: 15
+    }
+  },
+  {
+    title: "Distribution en France",
+    position: { x: 2, y: 1.25, z: -5 },
     content: `
             <div class="info-stage">Étape 5: Distribution finale</div>
             <img src="images/plateforme-distribution.webp" alt="Distribution en France">

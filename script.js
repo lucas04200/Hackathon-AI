@@ -9,10 +9,16 @@ let clock = new THREE.Clock();
 // Initialisation de Three.js
 function init() {
   console.log("Initializing...");
-  
+
+
   // Créer la scène
   scene = new THREE.Scene();
   
+  // Add a grid helper to visualize the XZ plane and help place your points
+  // size: 20 units, divisions: 20 lines, center line color, grid color
+  const gridHelper = new THREE.GridHelper(20, 20, 0x888888, 0x444444);
+  scene.add(gridHelper);
+
   // Créer la caméra
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(0, 5, 15);
