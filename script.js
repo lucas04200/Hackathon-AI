@@ -5,6 +5,7 @@ let animationId = null;
 let pointMarkers = [];
 let targetPosition = new THREE.Vector3();
 let clock = new THREE.Clock();
+let shrimpModel;
 
 // Initialisation de Three.js
 function init() {
@@ -56,6 +57,26 @@ function init() {
   
   // Gérer le redimensionnement de la fenêtre
   window.addEventListener('resize', onWindowResize);
+
+  const loader = new THREE.GLTFLoader();
+  loader.load('models/shrimp.glb', (gltf) => {
+    shrimpModel = gltf.scene;
+    console.log('Shrimp chargé !');
+    shrimpModel.scale.set(4, 4, 4); // Ajuste selon ton modèle
+    scene.add(shrimpModel);
+
+    // Place au premier point si possible
+    if (points.length > 0) {
+      const start = new THREE.Vector3(
+        points[0].position.x,
+        points[0].position.y,
+        points[0].position.z
+      ).normalize().multiplyScalar(5.1);
+      shrimpModel.position.copy(start);
+    }
+  }, undefined, (error) => {
+    console.error('Erreur de chargement GLB', error);
+  });
   
   // Démarrer l'animation
   animate();
@@ -75,6 +96,7 @@ function init() {
   
   // Initialiser le panneau d'impact
   updateImpactPanel(0);
+
 }
 
 // Création des marqueurs de points améliorés
@@ -288,12 +310,23 @@ function createPointMarkers() {
         points[index].position.z
       );
       
-      // Afficher les informations du point
+      // Déplacer le modèle shrimp vers le prochain point
+      if (shrimpModel) {
+        const destination = new THREE.Vector3(
+          points[index].position.x,
+          points[index].position.y,
+          points[index].position.z
+        ).normalize().multiplyScalar(5.1);
+        shrimpModel.userData.destination = destination;
+      }
+    
+      // Afficher les infos du point
       showPointInfo(index);
       
       // Update impact panel
       updateImpactPanel(index);
     }
+    
     
     // Afficher les informations d'un point avec animation
     function showPointInfo(index) {
@@ -407,19 +440,28 @@ function createPointMarkers() {
       try {
         renderer.render(scene, camera);
         
-        // Rotation lente de la planète
-        // planet.rotation.y += 0.001;
-        
         // Déplacer la caméra vers la position cible
         if (targetPosition) {
           const camTargetPos = targetPosition.clone().normalize().multiplyScalar(15);
           camera.position.lerp(camTargetPos, 0.02);
           camera.lookAt(0, 0, 0);
         }
+    
+        // Déplacer doucement le shrimpModel vers sa destination
+        if (shrimpModel && shrimpModel.userData.destination) {
+          // Mouvement doux vers la destination
+          shrimpModel.position.lerp(shrimpModel.userData.destination, 0.02);
         
-        // Mettre à jour les positions des marqueurs HTML
-        // updateMarkerPositions();
-        
+          // Nouvelle direction dynamique
+          const direction = shrimpModel.userData.destination.clone().sub(shrimpModel.position).normalize();
+          
+          if (direction.length() > 0) {
+            // Calculer la "target" pour le lookAt
+            const lookAtTarget = shrimpModel.position.clone().add(direction);
+            shrimpModel.lookAt(lookAtTarget);
+          }
+        }
+    
         requestAnimationFrame(animate);
       } catch (error) {
         console.error("Error in animation loop:", error);
@@ -427,6 +469,7 @@ function createPointMarkers() {
         document.querySelector('.loading-screen').style.display = 'block';
       }
     }
+    
     
     // Gestion du redimensionnement de la fenêtre
     function onWindowResize() {
