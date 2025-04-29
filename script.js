@@ -85,7 +85,7 @@ function createPointMarkers() {
       emissiveIntensity: 0.5,
       shininess: 30
     });
-    const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+    const marker = new THREE.Mesh(markerGeometry ,markerMaterial);
         // Add a pulsing ring
         const ringGeometry = new THREE.RingGeometry(0.2, 0.25, 32);
         const ringMaterial = new THREE.MeshBasicMaterial({ 
@@ -94,8 +94,8 @@ function createPointMarkers() {
           opacity: 0.7,
           side: THREE.DoubleSide
         });
-        const ring = new THREE.Mesh(ringGeometry, ringMaterial);
-        ring.rotation.x = Math.PI / 2;
+        const ring = new THREE.Mesh(ringGeometry , ringMaterial);
+        // ring.rotation.x = Math.PI / 2;
         
         // Add animation for the ring
         const pulseRing = () => {
@@ -222,25 +222,25 @@ function createPointMarkers() {
     }
     
     // Mise à jour des positions des marqueurs HTML
-    function updateMarkerPositions() {
-      pointMarkers.forEach((marker, index) => {
-        const position = marker.threeDMarker.position.clone();
-        const vector = position.project(camera);
+    // function updateMarkerPositions() {
+    //   pointMarkers.forEach((marker, index) => {
+    //     const position = marker.threeDMarker.position.clone();
+    //     const vector = position.project(camera);
         
-        // Convertir les coordonnées normalisées en coordonnées d'écran
-        const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
-        const y = (-vector.y * 0.5 + 0.5) * window.innerHeight;
+    //     // Convertir les coordonnées normalisées en coordonnées d'écran
+    //     const x = (vector.x * 0.5 + 0.5) * window.innerWidth;
+    //     const y = (-vector.y * 0.5 + 0.5) * window.innerHeight;
         
-        // Vérifier si le point est visible (face à la caméra)
-        if (vector.z < 1) {
-          marker.htmlMarker.style.display = 'block';
-          marker.htmlMarker.style.left = `${x}px`;
-          marker.htmlMarker.style.top = `${y}px`;
-        } else {
-          marker.htmlMarker.style.display = 'none';
-        }
-      });
-    }
+    //     // Vérifier si le point est visible (face à la caméra)
+    //     if (vector.z < 1) {
+    //       marker.htmlMarker.style.display = 'block';
+    //       marker.htmlMarker.style.left = `${x}px`;
+    //       marker.htmlMarker.style.top = `${y}px`;
+    //     } else {
+    //       marker.htmlMarker.style.display = 'none';
+    //     }
+    //   });
+    // }
     
     // Initialisation des contrôles
     function initControls() {
@@ -402,7 +402,7 @@ function createPointMarkers() {
         renderer.render(scene, camera);
         
         // Rotation lente de la planète
-        planet.rotation.y += 0.001;
+        // planet.rotation.y += 0.001;
         
         // Déplacer la caméra vers la position cible
         if (targetPosition) {
@@ -412,7 +412,7 @@ function createPointMarkers() {
         }
         
         // Mettre à jour les positions des marqueurs HTML
-        updateMarkerPositions();
+        // updateMarkerPositions();
         
         requestAnimationFrame(animate);
       } catch (error) {
