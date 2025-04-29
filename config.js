@@ -22,7 +22,7 @@ const points = [
     position: { x: 10, y: -8.5, z: -4 },
     content: `
         <div class="info-stage">Étape 2: Passage Sud Atlantique</div>
-        <img src="images/passage-cape.webp" alt="Passage Sud Afrique">
+        <img src="images/etape2.jpg" alt="Passage Sud Afrique">
         <div class="info-description">
           <p>Le cargo longe la côte ouest africaine jusqu'au Cap de Bonne-Espérance, contournant l'Afrique pour rejoindre l'océan Indien.</p>
           <div class="info-stats">
@@ -38,7 +38,7 @@ const points = [
     position: { x: 2, y: 0, z: -5 },
     content: `
         <div class="info-stage">Étape 3: Traversée de l'Océan Indien</div>
-        <img src="images/ocean-indien.webp" alt="Traversée Océan Indien">
+        <img src="images/etape3.png" alt="Traversée Océan Indien">
         <div class="info-description">
           <p>Le cargo traverse l'océan Indien en direction de l'Asie du Sud-Est, en maintenant la chaîne du froid.</p>
           <div class="info-stats">
@@ -70,7 +70,7 @@ const points = [
     position: { x: 2, y: 0.5, z: -5 },
     content: `
         <div class="info-stage">Étape 5: Retour par l'Océan Indien</div>
-        <img src="images/retour-ocean.webp" alt="Retour Océan Indien">
+        <img src="images/etape3.png" alt="Retour Océan Indien">
         <div class="info-description">
           <p>Les crevettes transformées repartent en traversant à nouveau l'océan Indien en direction de la Mer Rouge.</p>
           <div class="info-stats">
@@ -86,7 +86,7 @@ const points = [
     position: { x: 4.9, y: 1.5, z: -5 },
     content: `
         <div class="info-stage">Étape 6: Passage Bab el-Mandeb</div>
-        <img src="images/bab-el-mandeb.webp" alt="Détroit de Bab el-Mandeb">
+        <img src="images/etape6.webp" alt="Détroit de Bab el-Mandeb">
         <div class="info-description">
           <p>Le cargo passe par le détroit de Bab el-Mandeb pour entrer en Mer Rouge, reliant l'océan Indien à la Méditerranée.</p>
           <div class="info-stats">
@@ -102,7 +102,7 @@ const points = [
     position: { x: 7, y: 5.5, z: -3.9 },
     content: `
         <div class="info-stage">Étape 7: Traversée Méditerranée</div>
-        <img src="images/mer-mediterranee.webp" alt="Traversée Méditerranée">
+        <img src="images/etape7.png" alt="Traversée Méditerranée">
         <div class="info-description">
           <p>Après le canal de Suez, le cargo traverse toute la mer Méditerranée jusqu'à Marseille.</p>
           <div class="info-stats">
@@ -118,7 +118,7 @@ const points = [
     position: { x: 10, y: 9, z: -1 },
     content: `
         <div class="info-stage">Étape 8: Distribution en France</div>
-        <img src="images/distribution-france.webp" alt="Distribution en France">
+        <img src="images/port-marseille.jpg" alt="Distribution en France">
         <div class="info-description">
           <p>Arrivée à Marseille. Les crevettes sont déchargées puis transportées par camion réfrigéré vers les entrepôts logistiques et points de vente.</p>
           <div class="info-stats">

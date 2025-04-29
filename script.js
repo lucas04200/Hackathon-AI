@@ -10,27 +10,21 @@ let shrimpModel;
 // Initialisation de Three.js
 function init() {
   console.log("Initializing...");
-
-
+  
   // Créer la scène
   scene = new THREE.Scene();
   
-  // Add a grid helper to visualize the XZ plane and help place your points
-  // size: 20 units, divisions: 20 lines, center line color, grid color
-  const gridHelper = new THREE.GridHelper(20, 20, 0x888888, 0x444444);
-  scene.add(gridHelper);
-
   // Créer la caméra
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(200, 200, 200);
   camera.lookAt(0, 0, 0);
-  
+
   // Créer le renderer
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x000000);
   document.getElementById('scene').appendChild(renderer.domElement);
-  
+
   // Ajouter des lumières améliorées
   scene.add(new THREE.AmbientLight(0x404040));
 
@@ -42,19 +36,19 @@ function init() {
   const backLight = new THREE.DirectionalLight(0x4444ff, 0.3);
   backLight.position.set(-10, -5, -7);
   scene.add(backLight);
-  
+
   // Créer la planète
   createPlanet();
-  
+
   // Créer les étoiles
   createStars();
-  
+
   // Créer les marqueurs de points
   createPointMarkers();
 
   // Créer le chemin du voyage
   createJourneyPath();
-  
+
   // Gérer le redimensionnement de la fenêtre
   window.addEventListener('resize', onWindowResize);
 
@@ -80,20 +74,20 @@ function init() {
   
   // Démarrer l'animation
   animate();
-  
+
   // Initialiser les contrôles
   initControls();
-  
+
   // Mettre à jour l'interface utilisateur
   updateUI();
-  
+
   // Masquer l'écran de chargement après un court délai
   console.log("Initialization complete, hiding loading screen...");
   setTimeout(() => {
     document.querySelector('.loading-screen').style.display = 'none';
     console.log("Loading screen should be hidden now");
   }, 1500);
-  
+
   // Initialiser le panneau d'impact
   updateImpactPanel(0);
 
@@ -104,10 +98,10 @@ function createPointMarkers() {
   points.forEach((point, index) => {
     // Create a more interesting 3D marker
     const markerGroup = new THREE.Group();
-    
+
     // Main marker sphere
     const markerGeometry = new THREE.SphereGeometry(0.15, 16, 16);
-    const markerMaterial = new THREE.MeshPhongMaterial({ 
+    const markerMaterial = new THREE.MeshPhongMaterial({
       color: 0x4fc3f7,
       emissive: 0x0288d1,
       emissiveIntensity: 0.5,
@@ -248,7 +242,6 @@ function createPointMarkers() {
       
       console.log("Journey path created");
     }
-    
 
     // Initialisation des contrôles
     function initControls() {
@@ -260,9 +253,13 @@ function createPointMarkers() {
       });
       
       document.getElementById('next-btn').addEventListener('click', () => {
+        console.log("Next button clicked, currentPointIndex:", currentPointIndex, "points.length:", points.length);
         if (currentPointIndex < points.length - 1) {
           pauseAnimation();
           goToPoint(currentPointIndex + 1);
+        } else if (currentPointIndex === points.length - 1) {
+          console.log("Showing awareness popup");
+          showAwarenessPopup();
         }
       });
       
@@ -271,12 +268,12 @@ function createPointMarkers() {
       // Add event listener for the start journey button if it exists
       const startButton = document.getElementById('start-journey');
       if (startButton) {
-        startButton.addEventListener('click', function() {
+        startButton.addEventListener('click', function () {
           document.getElementById('title-overlay').style.display = 'none';
           showPointInfo(0); // Show first point info
         });
       }
-    }
+    }    
     
     // Fonction pour aller à un point spécifique
     function goToPoint(index) {
@@ -352,21 +349,30 @@ function createPointMarkers() {
       const playBtn = document.getElementById('play-btn');
       const locationIndicator = document.getElementById('location-indicator');
       const progressBar = document.getElementById('progress');
-      
+    
       // Mise à jour des boutons
       prevBtn.disabled = currentPointIndex === 0;
-      nextBtn.disabled = currentPointIndex === points.length - 1;
       
+      // Don't disable the next button at the last point
+      if (currentPointIndex === points.length - 1) {
+        nextBtn.textContent = "Conclusion";
+        nextBtn.disabled = false;
+      } else {
+        nextBtn.textContent = "Suivant →";
+        nextBtn.disabled = false;
+      }
+    
       // Mise à jour du texte du bouton play/pause
       playBtn.textContent = isPlaying ? 'Pause' : (currentPointIndex === points.length - 1 ? 'Redémarrer' : 'Démarrer');
-      
+    
       // Mise à jour de l'indicateur de position
       locationIndicator.textContent = `Point ${currentPointIndex + 1}/${points.length} : ${points[currentPointIndex].title}`;
-      
+    
       // Mise à jour de la barre de progression
       const progress = (currentPointIndex / (points.length - 1)) * 100;
       progressBar.style.width = `${progress}%`;
-    }
+    }    
+
     
     // Basculer entre lecture et pause
     function togglePlayPause() {
@@ -478,4 +484,60 @@ function createPointMarkers() {
       console.log("Three.js is loaded, starting initialization");
       init();
     });
+    
+    // Show awareness popup at the end of the journey
+    function showAwarenessPopup() {
+      const awarenessPopup = document.getElementById('awareness-popup');
+      console.log("Popup element:", awarenessPopup);
+      
+      // First set display to flex (without the active class)
+      awarenessPopup.style.display = 'flex';
+      
+      // Force a reflow before adding the active class
+      void awarenessPopup.offsetWidth;
+      
+      // Then add the active class after a small delay to allow the browser to process the display change
+      setTimeout(() => {
+        awarenessPopup.classList.add('active');
+        console.log("Added active class to popup");
+      }, 50);
+      
+      // Setup event listeners for the popup
+      document.getElementById('close-awareness-btn').addEventListener('click', () => {
+        console.log("Close button clicked");
+        awarenessPopup.classList.remove('active');
+        
+        // Wait for the opacity transition to complete before hiding
+        setTimeout(() => {
+          awarenessPopup.style.display = 'none';
+        }, 500); // Match this to your CSS transition time
+      });
+      
+      document.getElementById('learn-more-btn').addEventListener('click', () => {
+        document.getElementById('learn-more-modal').style.display = 'flex';
+      });
+      
+      document.getElementById('close-modal-btn').addEventListener('click', () => {
+        document.getElementById('learn-more-modal').style.display = 'none';
+      });
+      
+      document.getElementById('share-btn').addEventListener('click', () => {
+        alert('Partagez cette expérience avec vos amis pour sensibiliser à l\'importance de consommer local !');
+      });
+      
+      document.getElementById('restart-journey-btn').addEventListener('click', () => {
+        awarenessPopup.classList.remove('active');
+        
+        // Wait for the opacity transition to complete before hiding
+        setTimeout(() => {
+          awarenessPopup.style.display = 'none';
+          
+          // Reset the journey to the beginning
+          currentPointIndex = 0;
+          updateUI();
+          showPointInfo(0);
+          updateImpactPanel(0);
+        }, 500); // Match this to your CSS transition time
+      });
+    }
     

@@ -346,3 +346,274 @@ button:disabled {
   font-size: 12px;
   color: white;
 }
+
+/* Awareness Campaign Popup */
+.awareness-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.awareness-popup.active {
+  display: flex;
+  opacity: 1;
+}
+
+.awareness-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  background-color: #1a2639;
+  border-radius: 15px;
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.awareness-popup.active .awareness-content {
+  transform: translateY(0);
+}
+
+.awareness-content h2 {
+  color: #4fc3f7;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.awareness-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.awareness-section h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.awareness-section p {
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.impact-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.carbon-icon, .plate-icon {
+  font-size: 36px;
+  padding: 15px;
+  background-color: rgba(79, 195, 247, 0.2);
+  border-radius: 50%;
+}
+
+.distance-line {
+  flex-grow: 1;
+  height: 4px;
+  background: linear-gradient(to right, #4fc3f7, #ff5252);
+  margin: 0 20px;
+  position: relative;
+}
+
+.distance-line::before {
+  content: "25 000+ km";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.alternatives-list {
+  list-style: none;
+  padding: 0;
+}
+
+.alternatives-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.alternatives-list li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.alt-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.alt-text {
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+.awareness-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.action-btn.primary {
+  background-color: #4fc3f7;
+  color: #000;
+}
+
+.action-btn:not(.primary) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn.primary:hover {
+  background-color: #03a9f4;
+}
+
+.action-btn:not(.primary):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+/* Learn More Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  background-color: #1a2639;
+  border-radius: 15px;
+  padding: 30px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-section {
+  margin-bottom: 25px;
+}
+
+.modal-section h3 {
+  color: #4fc3f7;
+  margin-bottom: 10px;
+}
+
+.modal-section p {
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.modal-section ul {
+  padding-left: 20px;
+  color: #e0e0e0;
+}
+
+.modal-section a {
+  color: #4fc3f7;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.modal-section a:hover {
+  color: #03a9f4;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awareness-content, .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .awareness-content h2, .modal-content h2 {
+    font-size: 22px;
+  }
+  
+  .awareness-section h3, .modal-section h3 {
+    font-size: 18px;
+  }
+  
+  .awareness-actions {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    width: 100%;
+  }
+}

@@ -1,65 +1,157 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="data:,">
-  <title>Parcours Mondial d'une Crevette</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:,">
+    <title>Parcours Mondial d'une Crevette</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="loading-screen">
-    <h1>Le Voyage d'une Crevette</h1>
-    <div class="loader"></div>
-  </div>
-
-  <div id="title-overlay">
-    <h1>Le Voyage Mondial d'une Crevette</h1>
-    <p>Suivez le parcours de 25,000 km d'une crevette, de sa pêche au Sénégal jusqu'à votre assiette en France</p>
-    <button id="start-journey">Commencer le Voyage</button>
-  </div>
-
-  <div id="container">
-    <div id="scene"></div>
-
-    <div id="info-panel">
-      <h2>Titre du point d'intérêt</h2>
-      <div id="info-content"></div>
+    <div class="loading-screen">
+        <h1>Le Voyage d'une Crevette</h1>
+        <div class="loader"></div>
     </div>
 
-    <div id="impact-panel">
-      <h3>Impact Environnemental</h3>
-      <div class="impact-meter">
-        <div class="impact-fill" id="carbon-impact"></div>
-        <span>Empreinte Carbone</span>
-      </div>
-      <div class="impact-meter">
-        <div class="impact-fill" id="water-impact"></div>
-        <span>Consommation d'Eau</span>
-      </div>
-      <div class="impact-meter">
-        <div class="impact-fill" id="energy-impact"></div>
-        <span>Énergie Utilisée</span>
-      </div>
+    <div id="title-overlay">
+        <h1>Le Voyage Mondial d'une Crevette</h1>
+        <p>Suivez le parcours de 25,000 km d'une crevette, de sa pêche au Sénégal jusqu'à votre assiette en France</p>
+        <button id="start-journey">Commencer le Voyage</button>
     </div>
 
-    <div id="location-indicator">Point 1/5 : Départ</div>
+    <div id="container">
+        <div id="scene"></div>
 
-    <div id="progress-bar">
-      <div id="progress"></div>
+        <div id="info-panel">
+            <h2>Titre du point d'intérêt</h2>
+            <div id="info-content"></div>
+        </div>
+
+        <div id="impact-panel">
+            <h3>Impact Environnemental</h3>
+            <div class="impact-meter">
+                <div class="impact-fill" id="carbon-impact"></div>
+                <span>Empreinte Carbone</span>
+            </div>
+            <div class="impact-meter">
+                <div class="impact-fill" id="water-impact"></div>
+                <span>Consommation d'Eau</span>
+            </div>
+            <div class="impact-meter">
+                <div class="impact-fill" id="energy-impact"></div>
+                <span>Énergie Utilisée</span>
+            </div>
+        </div>
+
+        <div id="location-indicator">Point 1/5 : Départ</div>
+
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <div id="controls">
+            <button id="prev-btn" disabled>← Précédent</button>
+            <button id="play-btn">Démarrer</button>
+            <button id="next-btn">Suivant →</button>
+        </div>
     </div>
 
-    <div id="controls">
-      <button id="prev-btn" disabled>← Précédent</button>
-      <button id="play-btn">Démarrer</button>
-      <button id="next-btn">Suivant →</button>
+    <!-- Awareness Campaign Popup -->
+    <div id="awareness-popup" class="awareness-popup">
+        <div class="awareness-content">
+            <h2>Réfléchissons à notre consommation</h2>
+
+            <div class="awareness-section">
+                <h3>Le saviez-vous?</h3>
+                <p>Une crevette parcourt plus de 25 000 km avant d'arriver dans votre assiette. Nous utilisons cet exemple 
+                    pour mettre en évidence l'importance des circuits courts.
+                    Les crevettes constituent un aliment que nous consommons, mais leur parcours dévoile une réalité extrême, 
+                    souvent ignorée. Cela nous conduit à réfléchir : et si un régime alimentaire plus local et plus modeste
+                    était l'une des solutions pour diminuer les dépenses, les rejets de CO₂, la surconsommation et le gaspillage
+                    alimentaire ? 
+                </p>
+                <div class="impact-visual">
+                    <div class="carbon-icon">🏭</div>
+                    <div class="distance-line"></div>
+                    <div class="plate-icon">🍽️</div>
+                </div>
+            </div>
+
+            <div class="awareness-section">
+                <h3>Alternatives responsables</h3>
+                <ul class="alternatives-list">
+                    <li>
+                        <span class="alt-icon">🐟</span>
+                        <span class="alt-text">Privilégiez les produits de la mer locaux et de saison</span>
+                    </li>
+                    <li>
+                        <span class="alt-icon">🏷️</span>
+                        <span class="alt-text">Recherchez les labels de pêche durable (MSC, ASC)</span>
+                    </li>
+                    <li>
+                        <span class="alt-icon">🌱</span>
+                        <span class="alt-text">Réduisez votre consommation de produits importés</span>
+                    </li>
+                    <li>
+                        <span class="alt-icon">🛒</span>
+                        <span class="alt-text">Renseignez-vous sur l'origine des produits que vous achetez</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="awareness-actions">
+                <button id="learn-more-btn" class="action-btn primary">En savoir plus</button>
+                <button id="restart-journey-btn" class="action-btn">Recommencer le voyage</button>
+            </div>
+
+            <button id="close-awareness-btn" class="close-btn">×</button>
+        </div>
     </div>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+
+    <!-- Learn More Modal -->
+    <div id="learn-more-modal" class="modal">
+        <div class="modal-content">
+            <h2>Pour une consommation plus responsable</h2>
+
+            <div class="modal-section">
+                <h3>Impact environnemental</h3>
+                <p>Le transport des produits alimentaires sur de longues distances contribue significativement aux
+                    émissions de gaz à effet de serre. Une crevette importée peut avoir une empreinte carbone jusqu'à 10
+                    fois supérieure à celle d'un produit local.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Ressources locales</h3>
+                <p>La France dispose de nombreuses ressources marines le long de ses côtes. Privilégier les produits
+                    locaux soutient l'économie locale et réduit l'impact environnemental.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Saisonnalité</h3>
+                <p>Comme les fruits et légumes, les produits de la mer ont aussi une saisonnalité. Consommer des espèces
+                    au bon moment de l'année permet de respecter les cycles naturels et d'obtenir des produits de
+                    meilleure qualité.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Ressources utiles</h3>
+                <ul>
+                    <li><a href="https://www.msc.org/fr" target="_blank">Marine Stewardship Council (MSC)</a></li>
+                    <li><a href="https://www.ethic-ocean.org/" target="_blank">Ethic Ocean - Guide des espèces</a></li>
+                    <li><a href="https://www.mangerbouger.fr/" target="_blank">Manger Bouger - Conseils
+                            nutritionnels</a></li>
+                </ul>
+            </div>
+
+            <button id="close-modal-btn" class="close-btn">×</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
     
