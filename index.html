@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Parcours Mondial d'une Crevette</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="loading-screen">
         <h1>Le Voyage d'une Crevette</h1>
@@ -31,17 +33,21 @@
             <h3>Impact Environnemental</h3>
             <div class="impact-meter">
                 <div class="impact-fill" id="carbon-impact"></div>
-                <span>Empreinte Carbone</span>
+                <span style="position: absolute; left: 90px;">Empreinte Carbone</span>
+                <span id="carbon-impact-value" class="impact-value"></span>
             </div>
             <div class="impact-meter">
                 <div class="impact-fill" id="water-impact"></div>
-                <span>Consommation d'Eau</span>
+                <span style="position: absolute; left: 90px;">Consommation d'Eau</span>
+                <span id="water-impact-value" class="impact-value"></span>
             </div>
             <div class="impact-meter">
                 <div class="impact-fill" id="energy-impact"></div>
-                <span>Énergie Utilisée</span>
+                <span style="position: absolute; left: 90px;">Énergie Utilisée</span>
+                <span id="energy-impact-value" class="impact-value"></span>
             </div>
         </div>
+        
 
         <div id="location-indicator">Point 1/5 : Départ</div>
 
@@ -63,12 +69,16 @@
 
             <div class="awareness-section">
                 <h3>Le saviez-vous?</h3>
-                <p>Une crevette parcourt plus de 25 000 km avant d'arriver dans votre assiette. Nous utilisons cet exemple 
+                <p>Une crevette parcourt plus de 25 000 km avant d'arriver dans votre assiette. Nous utilisons cet
+                    exemple
                     pour mettre en évidence l'importance des circuits courts.
-                    Les crevettes constituent un aliment que nous consommons, mais leur parcours dévoile une réalité extrême, 
-                    souvent ignorée. Cela nous conduit à réfléchir : et si un régime alimentaire plus local et plus modeste
-                    était l'une des solutions pour diminuer les dépenses, les rejets de CO₂, la surconsommation et le gaspillage
-                    alimentaire ? 
+                    Les crevettes constituent un aliment que nous consommons, mais leur parcours dévoile une réalité
+                    extrême,
+                    souvent ignorée. Cela nous conduit à réfléchir : et si un régime alimentaire plus local et plus
+                    modeste
+                    était l'une des solutions pour diminuer les dépenses, les rejets de CO₂, la surconsommation et le
+                    gaspillage
+                    alimentaire ?
                 </p>
                 <div class="impact-visual">
                     <div class="carbon-icon">🏭</div>
@@ -153,5 +163,5 @@
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
-    

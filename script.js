@@ -6,6 +6,7 @@ let pointMarkers = [];
 let targetPosition = new THREE.Vector3();
 let clock = new THREE.Clock();
 let shrimpModel;
+let journeyStarted = false;
 
 // Initialisation de Three.js
 function init() {
@@ -270,8 +271,8 @@ function createPointMarkers() {
       if (startButton) {
         startButton.addEventListener('click', function () {
           document.getElementById('title-overlay').style.display = 'none';
-          showPointInfo(0); // Show first point info
-        });
+          journeyStarted = true; // ➔ Commencer le voyage officiellement
+          goToPoint(0);        });
       }
     }    
     
@@ -333,14 +334,19 @@ function createPointMarkers() {
     // Mise à jour du panneau d'impact environnemental
     function updateImpactPanel(index) {
       const impact = points[index].impact;
-      
+  
       if (impact) {
-        // Animate the impact meters
-        document.getElementById('carbon-impact').style.width = `${impact.carbon}%`;
-        document.getElementById('water-impact').style.width = `${impact.water}%`;
-        document.getElementById('energy-impact').style.width = `${impact.energy}%`;
+          // Update fill widths
+          document.getElementById('carbon-impact').style.width = `${100 / 5.98 * impact.carbon}%`;
+          document.getElementById('water-impact').style.width = `${100 / 20 * impact.water}%`;
+          document.getElementById('energy-impact').style.width = `${100 / 23.69 * impact.energy}%`;
+  
+          // Update textual values
+          document.getElementById('carbon-impact-value').textContent = `${impact.carbon.toFixed(2)} kg CO₂`;
+          document.getElementById('water-impact-value').textContent = `${impact.water.toFixed(2)} m³`;
+          document.getElementById('energy-impact-value').textContent = `${impact.energy.toFixed(2)} kWh`;
       }
-    }
+  }
     
     // Mise à jour de l'interface utilisateur
     function updateUI() {
@@ -427,7 +433,7 @@ function createPointMarkers() {
         renderer.render(scene, camera);
         
         // Déplacer la caméra vers la position cible
-        if (targetPosition) {
+        if (journeyStarted && targetPosition) {
           const camTargetPos = targetPosition.clone().normalize().multiplyScalar(15);
           camera.position.lerp(camTargetPos, 0.02);
           camera.lookAt(0, 0, 0);

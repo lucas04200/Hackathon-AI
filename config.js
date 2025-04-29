@@ -15,8 +15,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 10, water: 5, energy: 15 }
-  },
+      impact: { carbon: 1.5, water: 5, energy: 15 }
+    },
   {
     title: "Passage au Sud de l'Afrique",
     position: { x: 10, y: -8.5, z: -4 },
@@ -31,8 +31,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 20, water: 5, energy: 20 }
-  },
+      impact: { carbon: 2.47, water: 5, energy: 16.5 }
+    },
   {
     title: "Traversée de l'Océan Indien",
     position: { x: 2, y: 0, z: -5 },
@@ -47,8 +47,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 25, water: 5, energy: 25 }
-  },
+      impact: { carbon: 3.12, water: 5, energy: 17.5 }
+    },
   {
     title: "Transformation au Vietnam",
     position: { x: -1.25, y: 1, z: -5 },
@@ -63,8 +63,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 25, water: 60, energy: 30 }
-  },
+      impact: { carbon: 4.62, water: 20, energy: 21.61 }
+    },
   {
     title: "Retour Océan Indien",
     position: { x: 2, y: 0.5, z: -5 },
@@ -79,8 +79,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 20, water: 5, energy: 20 }
-  },
+      impact: { carbon: 5.27, water: 20, energy: 22.61 }
+    },
   {
     title: "Passage Bab el-Mandeb",
     position: { x: 4.9, y: 1.5, z: -5 },
@@ -95,8 +95,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 5, water: 2, energy: 5 }
-  },
+      impact: { carbon: 5.37, water: 20, energy: 22.76 }
+    },
   {
     title: "Traversée de la Méditerranée",
     position: { x: 7, y: 5.5, z: -3.9 },
@@ -111,8 +111,8 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 15, water: 5, energy: 15 }
-  },
+      impact: { carbon: 5.86, water: 20, energy: 23.51 }
+    },
   {
     title: "Arrivée en France (Marseille)",
     position: { x: 10, y: 9, z: -1 },
@@ -127,9 +127,9 @@ const points = [
           </div>
         </div>
       `,
-    impact: { carbon: 20, water: 5, energy: 15 }
-  }
-];
+      impact: { carbon: 5.98, water: 20, energy: 23.69 }
+    }
+];  
 
 // Helper functions for creating 3D objects
 function createPlanet() {
